@@ -1,18 +1,18 @@
 {
   "hero": {
-    "subtitle": "Aulas de direção categoria B com atendimento em domicílio, foco em quem está começando do zero ou quer perder o medo de dirigir nas cidades atendidas.",
+    "subtitle": "Aulas de direção categoria B com atendimento em domicílio. Rápido, fácil, sem burocracia. Foco em quem está começando do zero ou quer perder o medo de dirigir.",
     "badges": [
       "Categoria B",
       "Atendimento em domicílio",
-      "Instrutora credenciada"
+      "Instrutora credenciada há 16 anos"
     ]
   },
   "vantagens": [
     {
       "icon": "bi bi-house-check",
       "iconBg": "icon-bg-yellow",
-      "title": "Aulas onde você precisa",
-      "description": "Atendimento em domicílio nas regiões atendidas, com rotas pensadas para a sua rotina."
+      "title": "Aulas que começam e terminam na sua casa",
+      "description": "Atendimento em domicílio em Paulínia, Campinas, Sumaré e Hortolândia, com rotas pensadas para a sua rotina."
     },
     {
       "icon": "bi bi-emoji-smile",
@@ -29,8 +29,8 @@
     {
       "icon": "bi bi-clock-history",
       "iconBg": "icon-bg-yellow",
-      "title": "Horários flexíveis",
-      "description": "Aulas agendadas de acordo com a sua disponibilidade, dentro da agenda da instrutora."
+      "title": "Flexibilidade de horários e dias",
+      "description": "Aulas agendadas de acordo com a sua disponibilidade, dentro da agenda da instrutora. Sem pressa, no seu ritmo."
     },
     {
       "icon": "bi bi-shield-check",
@@ -41,8 +41,14 @@
     {
       "icon": "bi bi-person-hearts",
       "iconBg": "icon-bg-blue",
-      "title": "Apoio emocional",
-      "description": "Acompanhamento cuidadoso para quem sente medo ou ansiedade ao dirigir."
+      "title": "Sem taxas extras, com total apoio",
+      "description": "Sem taxas extras, com suporte e todas as atenções que você precisa até se sentir seguro ao volante."
+    },
+    {
+      "icon": "bi bi-trophy",
+      "iconBg": "icon-bg-green",
+      "title": "Mais de 10.000 alunos atendidos",
+      "description": "Experiência comprovada com milhares de alunos que conquistaram confiança e habilitação com sucesso."
     }
   ],
   "servicos": {
@@ -66,12 +72,20 @@
     ],
     "conteudos": [
       {
-        "title": "Domínio básico do veículo",
-        "description": "Posição ao volante, pedais, câmbio, retrovisores e comandos principais."
+        "title": "Aulas para iniciantes",
+        "description": "Aulas de início de processo, do básico ao avançado, respeitando seu ritmo e tempo de aprendizado."
       },
       {
-        "title": "Partidas, paradas e aclives",
-        "description": "Saída em segurança, controle do carro em subidas e uso correto do freio."
+        "title": "Aperfeiçoamento no trânsito",
+        "description": "Para quem já dirige mas quer ganhar mais confiança e segurança nas situações do dia a dia."
+      },
+      {
+        "title": "Reforço para exame prático",
+        "description": "Treino focado nas manobras e situações específicas do exame prático do Detran."
+      },
+      {
+        "title": "Domínio básico do veículo",
+        "description": "Posição ao volante, pedais, câmbio, retrovisores e comandos principais."
       },
       {
         "title": "Baliza e manobras",
@@ -80,22 +94,20 @@
       {
         "title": "Trânsito urbano",
         "description": "Rotatórias, cruzamentos, faixas de pedestre e leitura de sinais."
-      },
-      {
-        "title": "Direção defensiva",
-        "description": "Tomada de decisão, distância segura, antecipação de riscos e postura no trânsito."
       }
     ]
   },
   "sobre": {
-    "resumo": "A Instrutora Jaque é instrutora de trânsito especializada em categoria B, com foco em pessoas que estão dando os primeiros passos ao volante ou que querem dirigir com mais segurança no dia a dia. O objetivo é transformar medo em confiança, com aulas claras, acolhedoras e realistas.",
-    "missao": "Ajudar pessoas a se sentirem seguras e preparadas para dirigir, respeitando o tempo de cada aluno e valorizando a responsabilidade no trânsito.",
+    "resumo": "A Instrutora Jaque é instrutora de trânsito credenciada pelo Detran há 16 anos, com foco em pessoas que estão dando os primeiros passos ao volante ou que querem dirigir com mais segurança no dia a dia. Com mais de 10.000 alunos atendidos, o objetivo é transformar medo em confiança, com aulas claras, acolhedoras e realistas.",
+    "missao": "Ajudar pessoas a se sentirem seguras e preparadas para dirigir, respeitando o tempo de cada aluno e valorizando a responsabilidade no trânsito. Sem taxas extras, com total apoio e suporte até você se sentir seguro.",
     "visao": "Ser referência em aulas de direção personalizadas, colocando o cuidado com o aluno e a segurança acima de qualquer pressa.",
     "valores": [
       "Calma e empatia em todas as aulas",
       "Compromisso com a segurança",
       "Respeito à individualidade de cada pessoa",
-      "Transparência na comunicação"
+      "Transparência na comunicação",
+      "Experiência de 16 anos credenciada pelo Detran",
+      "Mais de 10.000 alunos atendidos com sucesso"
     ]
   },
   "planos": [
@@ -152,22 +164,22 @@
     }
   ],
   "whatsapp": {
-    "display": "+55 (19) 99160-6312",
+    "display": "(19) 99160-6312",
     "url": "https://wa.me/5519991606312?text=",
     "ctaLabel": "Falar com a Jaque agora",
-    "horario": "Atendimento de segunda a sábado, conforme agenda da instrutora.",
-    "regioes": "Atendimento em domicílio em regiões específicas, a combinar no contato."
+    "horario": "Flexibilidade de horários e dias, conforme disponibilidade da instrutora.",
+    "regioes": "Atendimento em domicílio em Paulínia, Campinas, Sumaré e Hortolândia."
   },
   "contato": {
     "enderecoTitulo": "Regiões de atendimento",
-    "enderecoLinha": "Atendimento em domicílio nas seguintes regiões, a combinar detalhes pelo WhatsApp:",
+    "enderecoLinha": "Atendimento em domicílio nas seguintes cidades, a combinar detalhes pelo WhatsApp:",
     "regioes": [
-      "Zona Norte",
-      "Zona Sul",
-      "Zona Leste",
-      "Zona Oeste"
+      "Paulínia",
+      "Campinas",
+      "Sumaré",
+      "Hortolândia"
     ],
-    "infoExtra": "Dentro de cada região, os pontos exatos de encontro e rotas são combinados individualmente com cada aluno."
+    "infoExtra": "Aulas que começam e terminam na sua casa. Os pontos exatos de encontro e rotas são combinados individualmente com cada aluno."
   },
   "redes": [
     {
@@ -186,7 +198,7 @@
     }
   ],
   "experiencia": {
-    "carroImagem": "assets/header-perfil.png",
+    "carroImagem": "assets/veiculo.png",
     "carroDescricao": "Imagem ilustrativa do carro usado nas aulas. Você pode substituir por uma foto real do veículo da instrutora.",
     "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
     "feedbacks": [
