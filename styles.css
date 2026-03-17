@@ -560,6 +560,62 @@ body .text-muted {
   transform-origin: center;
 }
 
+/* Espaçamento correto entre título e descrição na seção sobre (missão, visão, valores) */
+section#sobre .col-md-4 {
+  display: flex;
+  flex-direction: column;
+}
+
+section#sobre .col-md-4 h3.h6 {
+  margin-bottom: 1rem !important;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: rgba(248, 249, 250, 0.65) !important;
+}
+
+section#sobre .col-md-4 p.small {
+  margin-top: 0;
+  line-height: 1.75;
+  color: rgba(248, 249, 250, 0.9);
+  flex: 1;
+}
+
+section#sobre .col-md-4 ul.small {
+  margin-top: 0;
+  line-height: 1.75;
+  color: rgba(248, 249, 250, 0.9);
+  flex: 1;
+}
+
+section#sobre .col-md-4 ul.small li {
+  margin-bottom: 0.6rem;
+  padding-left: 0.25rem;
+}
+
+section#sobre .col-md-4 ul.small li:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  section#sobre .col-md-4 {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+  
+  section#sobre .col-md-4:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  section#sobre .col-md-4:first-child {
+    padding-left: 0;
+  }
+  
+  section#sobre .col-md-4:last-child {
+    padding-right: 0;
+  }
+}
+
 /* =========================================================
    Planos
    ====================================================== */

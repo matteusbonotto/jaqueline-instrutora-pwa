@@ -282,18 +282,18 @@
 
                 <div class="row g-4">
                   <div class="col-md-4">
-                    <h3 class="h6 text-uppercase text-muted mb-2">Missão</h3>
-                    <p class="small mb-0" x-text="sobre.missao"></p>
+                    <h3 class="h6 text-uppercase text-muted mb-3">Missão</h3>
+                    <p class="small mb-0 lh-base" x-text="sobre.missao"></p>
                   </div>
                   <div class="col-md-4">
-                    <h3 class="h6 text-uppercase text-muted mb-2">Visão</h3>
-                    <p class="small mb-0" x-text="sobre.visao"></p>
+                    <h3 class="h6 text-uppercase text-muted mb-3">Visão</h3>
+                    <p class="small mb-0 lh-base" x-text="sobre.visao"></p>
                   </div>
                   <div class="col-md-4">
-                    <h3 class="h6 text-uppercase text-muted mb-2">Valores</h3>
-                    <ul class="small mb-0 ps-3">
+                    <h3 class="h6 text-uppercase text-muted mb-3">Valores</h3>
+                    <ul class="small mb-0 ps-3 lh-base">
                       <template x-for="(valor, index) in sobre.valores" :key="index">
-                        <li x-text="valor"></li>
+                        <li class="mb-1" x-text="valor"></li>
                       </template>
                     </ul>
                   </div>
@@ -499,6 +499,32 @@
                 Escolha o formato que combina com o seu momento. Sem letras miúdas e com
                 total transparência.
               </p>
+            </div>
+          </div>
+
+          <!-- Cidades de atendimento -->
+          <div class="row mb-4">
+            <div class="col-12">
+              <div class="glass-card p-3 p-md-4 mb-4">
+                <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-3">
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="material-icons-round text-primary">location_on</span>
+                    <h3 class="h6 mb-0">Cidades de atendimento:</h3>
+                  </div>
+                  <div class="d-flex flex-wrap gap-2">
+                    <template x-for="(regiao, index) in contato.regioes" :key="index">
+                      <span class="badge badge-glass d-inline-flex align-items-center">
+                        <span class="material-icons-round badge-icon me-1" style="font-size: 0.9rem;">place</span>
+                        <span x-text="regiao"></span>
+                      </span>
+                    </template>
+                  </div>
+                </div>
+                <p class="small text-muted mt-3 mb-0">
+                  <span class="material-icons-round align-middle me-1" style="font-size: 1rem;">info</span>
+                  <strong>Importante:</strong> Os valores dos pacotes variam de cidade em cidade. Os valores exibidos são referência. Para saber o valor exato para sua cidade, entre em contato pelo WhatsApp.
+                </p>
+              </div>
             </div>
           </div>
 
