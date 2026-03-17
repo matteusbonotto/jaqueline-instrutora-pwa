@@ -67,7 +67,10 @@ function landingApp() {
 
     async loadData() {
       try {
-        const response = await fetch("/data.json");
+        // Detecta base path para GitHub Pages
+        const basePath = window.location.pathname.split('/').slice(0, -1).join('/') || '';
+        const dataPath = basePath ? `${basePath}/data.json` : './data.json';
+        const response = await fetch(dataPath);
         const data = await response.json();
 
         this.hero = data.hero;

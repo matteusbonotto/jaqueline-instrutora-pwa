@@ -10,19 +10,26 @@
       content="Aulas de direção categoria B com a Instrutora Jaque. Atendimento em domicílio, foco em iniciantes e pessoas com medo de dirigir."
     />
 
+    <!-- Base path para GitHub Pages -->
+    <script>
+      // Detecta o base path automaticamente
+      const basePath = window.location.pathname.split('/').slice(0, -1).join('/') || '';
+      window.BASE_PATH = basePath;
+    </script>
+
     <!-- PWA -->
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="./manifest.json" />
     <meta name="theme-color" content="#111111" />
 
     <!-- iOS / Apple -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <link rel="apple-touch-icon" href="/assets/icon-192.svg" />
+    <link rel="apple-touch-icon" href="./assets/icon-192.svg" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-    <link rel="alternate icon" href="/assets/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <link rel="alternate icon" href="./assets/favicon.svg" />
 
     <!-- Bootstrap 5 -->
     <link
@@ -51,7 +58,7 @@
     />
 
     <!-- App styles -->
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
 
   <body class="bg-body text-light">
@@ -195,7 +202,7 @@
               <div class="hero-photo-wrapper animate-on-scroll" data-animate="fade-left">
                 <div class="hero-photo-glass"></div>
                 <img
-                  src="/assets/header-perfil.png"
+                  src="./assets/header-perfil.png"
                   alt="Instrutora Jaque em aula de direção"
                   class="hero-photo img-fluid"
                   loading="lazy"
@@ -336,14 +343,14 @@
                 <div class="about-photo-glass"></div>
                 <!-- Desktop / tablet: foto de perfil tradicional -->
                 <img
-                  src="/assets/perfil.jpg"
+                  src="./assets/perfil.jpg"
                   alt="Foto de perfil da Instrutora Jaque"
                   class="about-photo img-fluid d-none d-md-block"
                   loading="lazy"
                 />
                 <!-- Mobile: usar a mesma foto do header -->
                 <img
-                  src="/assets/header-perfil.png"
+                  src="./assets/header-perfil.png"
                   alt="Instrutora Jaque em aula de direção"
                   class="about-photo img-fluid d-block d-md-none"
                   loading="lazy"
@@ -520,7 +527,7 @@
                 <div class="row g-3 align-items-center">
                   <div class="col-6">
                     <div class="qrcode-placeholder glass-card-subtle">
-                      <img src="/assets/qr-code.png" alt="QRCode do WhatsApp" class="mb-2">
+                      <img src="./assets/qr-code.png" alt="QRCode do WhatsApp" class="mb-2">
                       <p class="small mb-0 text-muted text-center">
                         Espaço para QRCode personalizado do WhatsApp.
                       </p>
@@ -635,7 +642,7 @@
                     class="btn btn-cnh-link d-inline-flex align-items-center gap-2"
                     aria-label="Abrir página da CNH Brasil"
                   >
-                    <img src="/assets/cnhbrasil.jpeg" alt="Logo CNH Brasil" />
+                    <img src="./assets/cnhbrasil.jpeg" alt="Logo CNH Brasil" />
                     <span x-text="cnh.ctaLabel"></span>
                   </a>
                   <span class="small text-muted">
@@ -740,9 +747,22 @@
     
     <!-- Service Worker - REGISTRO SIMPLES E DIRETO -->
     <script>
+      // Usa base path dinâmico para GitHub Pages
+      const getBasePath = () => {
+        const path = window.location.pathname;
+        // Se está na raiz do domínio, retorna vazio
+        if (path === '/' || path === '/index.html') return '';
+        // Caso contrário, pega o caminho até o index.html
+        return path.split('/').slice(0, -1).join('/');
+      };
+      
+      const basePath = getBasePath();
+      const swPath = basePath ? `${basePath}/service-worker.js` : './service-worker.js';
+      const swScope = basePath ? `${basePath}/` : './';
+      
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
+          navigator.serviceWorker.register(swPath, { scope: swScope })
             .then(function(registration) {
               console.log('✅ Service Worker registrado!', registration.scope);
               
@@ -809,7 +829,7 @@
     </script>
     
     <!-- App -->
-    <script src="/app.js"></script>
+    <script src="./app.js"></script>
     
     <!-- Alpine -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>

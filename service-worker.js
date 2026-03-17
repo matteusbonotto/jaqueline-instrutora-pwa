@@ -30,10 +30,14 @@ self.addEventListener('activate', (event) => {
 // Fetch - CRÍTICO para PWA ser instalável
 self.addEventListener('fetch', (event) => {
   // O Chrome precisa que o SW responda a requisições para considerar instalável
-  event.respondWith(
-    fetch(event.request).catch(() => {
-      // Fallback básico se offline
-      return new Response('Offline', { status: 503 });
-    })
-  );
+  // Ignora requisições de outros domínios (CDNs, APIs, etc)
+  if (event.request.url.startsWith(self.location.origin)) {
+    event.respondWith(
+      fetch(event.request).catch(() => {
+        // Fallback básico se offline
+        return new Response('Offline', { status: 503 });
+      })
+    );
+  }
+  // Para requisições externas, deixa passar normalmente
 });
