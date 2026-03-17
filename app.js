@@ -56,15 +56,18 @@ function landingApp() {
     canInstall: false,
 
     async init() {
-      this.registerServiceWorker();
+      // Service Worker já foi registrado no HTML antes do Alpine
+      // Carrega os dados
       await this.loadData();
+      // Inicializa animações
       this.initScrollAnimations();
+      // Configura o prompt de instalação
       this.setupInstallPrompt();
     },
 
     async loadData() {
       try {
-        const response = await fetch("data.json");
+        const response = await fetch("/data.json");
         const data = await response.json();
 
         this.hero = data.hero;
@@ -112,19 +115,6 @@ function landingApp() {
       elements.forEach((el) => observer.observe(el));
     },
 
-    registerServiceWorker() {
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("/service-worker.js", { scope: "/" })
-            .then((reg) => {
-              console.log("[SW] Registrado com sucesso", reg.scope);
-              reg.update();
-            })
-            .catch((err) => console.error("[SW] Falha no registro", err));
-        });
-      }
-    },
 
     setupInstallPrompt() {
       // Atualiza o estado quando o evento global for disparado

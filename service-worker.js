@@ -1,78 +1,39 @@
-const CACHE_NAME = "instrutora-jaque-cache-v3";
-const OFFLINE_URL = "/index.html";
+// Service Worker para PWA instalável
+const CACHE_NAME = 'instrutora-jaque-v1';
 
-const ASSETS_TO_CACHE = [
-  "/",
-  "/index.html",
-  "/styles.css",
-  "/app.js",
-  "/data.json",
-  "/manifest.json"
-];
-
-self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS_TO_CACHE))
-  );
-  self.skipWaiting();
+// Instalação
+self.addEventListener('install', (event) => {
+  console.log('[SW] Instalando...');
+  self.skipWaiting(); // Ativa imediatamente
 });
 
-self.addEventListener("activate", (event) => {
+// Ativação
+self.addEventListener('activate', (event) => {
+  console.log('[SW] Ativando...');
   event.waitUntil(
-    caches
-      .keys()
-      .then((keys) =>
-        Promise.all(
-          keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))
-        )
-      )
-  );
-  self.clients.claim();
-});
-
-self.addEventListener("fetch", (event) => {
-  const { request } = event;
-
-  if (request.method !== "GET") return;
-
-  // Navegação (HTML) → network first com fallback offline
-  if (request.mode === "navigate") {
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          if (response && response.status === 200) {
-            const clone = response.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+    caches.keys().then((keys) => {
+      return Promise.all(
+        keys.map((key) => {
+          if (key !== CACHE_NAME) {
+            console.log('[SW] Removendo cache antigo:', key);
+            return caches.delete(key);
           }
-          return response;
         })
-        .catch(() => {
-          return caches.match(OFFLINE_URL).then((cached) => {
-            return cached || new Response("Offline", { status: 503 });
-          });
-        })
-    );
-    return;
-  }
+      );
+    }).then(() => {
+      console.log('[SW] ✅ Service Worker ATIVADO e funcionando!');
+      return self.clients.claim(); // Toma controle imediato
+    })
+  );
+});
 
-  // Outros GET → cache first com atualização em segundo plano
+// Fetch - CRÍTICO para PWA ser instalável
+self.addEventListener('fetch', (event) => {
+  // O Chrome precisa que o SW responda a requisições para considerar instalável
   event.respondWith(
-    caches.match(request).then((cached) => {
-      const fetchPromise = fetch(request)
-        .then((networkResponse) => {
-          if (
-            networkResponse &&
-            networkResponse.status === 200 &&
-            networkResponse.type !== "opaque"
-          ) {
-            const clone = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
-          }
-          return networkResponse;
-        })
-        .catch(() => cached || new Response("", { status: 503 }));
-
-      return cached || fetchPromise;
+    fetch(event.request).catch(() => {
+      // Fallback básico se offline
+      return new Response('Offline', { status: 503 });
     })
   );
 });

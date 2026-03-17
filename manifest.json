@@ -2,6 +2,7 @@
   "name": "Instrutora Jaqueline - Aulas de Direção Categoria B",
   "short_name": "Instrutora Jaqueline",
   "description": "Aulas de direção categoria B com foco em iniciantes e pessoas com medo de dirigir. Atendimento em domicílio nas regiões atendidas.",
+  "id": "/",
   "start_url": "/index.html",
   "scope": "/",
   "display": "standalone",
@@ -10,15 +11,21 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "assets/perfil.jpg",
+      "src": "/assets/icon-192.svg",
       "sizes": "192x192",
-      "type": "image/jpeg",
-      "purpose": "any maskable"
+      "type": "image/svg+xml",
+      "purpose": "any"
     },
     {
-      "src": "assets/perfil.jpg",
+      "src": "/assets/icon-512.svg",
       "sizes": "512x512",
-      "type": "image/jpeg",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icon-192.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
       "purpose": "any maskable"
     }
   ]
