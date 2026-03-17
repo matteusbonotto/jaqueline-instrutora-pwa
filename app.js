@@ -53,6 +53,16 @@ function landingApp() {
       infoExtra: "",
     },
     redes: [],
+    aprovados: {
+      titulo: "",
+      descricao: "",
+      imagens: [],
+      videoConvite: ""
+    },
+    aprovadosCurrentIndex: 0,
+    aprovadosIntervalId: null,
+    aprovadosModalOpen: false,
+    aprovadosModalImage: null,
     canInstall: false,
 
     async init() {
@@ -63,6 +73,8 @@ function landingApp() {
       this.initScrollAnimations();
       // Configura o prompt de instalação
       this.setupInstallPrompt();
+      // Inicia slider de aprovados
+      this.startAprovadosSlider();
     },
 
     async loadData() {
@@ -83,6 +95,7 @@ function landingApp() {
         this.redes = data.redes;
         this.experiencia = data.experiencia;
         this.cnh = data.cnh;
+        this.aprovados = data.aprovados;
       } catch (error) {
         // Em produção, você poderia logar isso em algum serviço
         console.error("Erro ao carregar data.json", error);
@@ -118,6 +131,50 @@ function landingApp() {
       elements.forEach((el) => observer.observe(el));
     },
 
+    // Slider de aprovados
+    nextAprovadosSlide() {
+      if (!this.aprovados.imagens.length) return;
+      this.aprovadosCurrentIndex =
+        (this.aprovadosCurrentIndex + 1) % this.aprovados.imagens.length;
+    },
+
+    prevAprovadosSlide() {
+      if (!this.aprovados.imagens.length) return;
+      this.aprovadosCurrentIndex =
+        (this.aprovadosCurrentIndex - 1 + this.aprovados.imagens.length) %
+        this.aprovados.imagens.length;
+    },
+
+    goToAprovadosSlide(index) {
+      if (!this.aprovados.imagens.length) return;
+      this.aprovadosCurrentIndex = index;
+    },
+
+    startAprovadosSlider() {
+      if (this.aprovadosIntervalId || !this.aprovados.imagens.length) return;
+      this.aprovadosIntervalId = setInterval(() => {
+        this.nextAprovadosSlide();
+      }, 5000);
+    },
+
+    stopAprovadosSlider() {
+      if (this.aprovadosIntervalId) {
+        clearInterval(this.aprovadosIntervalId);
+        this.aprovadosIntervalId = null;
+      }
+    },
+
+    openAprovadosModal(img) {
+      this.aprovadosModalImage = img;
+      this.aprovadosModalOpen = true;
+      this.stopAprovadosSlider();
+    },
+
+    closeAprovadosModal() {
+      this.aprovadosModalOpen = false;
+      this.aprovadosModalImage = null;
+      this.startAprovadosSlider();
+    },
 
     setupInstallPrompt() {
       // Atualiza o estado quando o evento global for disparado

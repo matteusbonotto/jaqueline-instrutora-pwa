@@ -4,18 +4,11 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Instrutora Jaquelinr | Aulas de Direção Categoria B</title>
+    <title>Instrutora Jaqueline | Aulas de Direção Categoria B</title>
     <meta
       name="description"
       content="Aulas de direção categoria B com a Instrutora Jaque. Atendimento em domicílio, foco em iniciantes e pessoas com medo de dirigir."
     />
-
-    <!-- Base path para GitHub Pages -->
-    <script>
-      // Detecta o base path automaticamente
-      const basePath = window.location.pathname.split('/').slice(0, -1).join('/') || '';
-      window.BASE_PATH = basePath;
-    </script>
 
     <!-- PWA -->
     <link rel="manifest" href="./manifest.json" />
@@ -25,11 +18,13 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <link rel="apple-touch-icon" href="./assets/icon-192.svg" />
+    <link rel="apple-touch-icon" href="./assets/favicon/apple-touch-icon.png" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
-    <link rel="alternate icon" href="./assets/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/favicon/favicon-96x96.png" />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon/favicon.ico" />
+    <link rel="alternate icon" href="./assets/favicon/favicon.svg" />
 
     <!-- Bootstrap 5 -->
     <link
@@ -69,9 +64,17 @@
     >
       <div class="container-xxl">
         <a class="navbar-brand d-flex align-items-center gap-2" href="#topo">
+          <div class="brand-mark d-flex align-items-center justify-content-center">
+            <img
+              src="./assets/logotipo/favicon-branco.png"
+              alt="Logotipo Instrutora Jaque"
+              class="brand-logo"
+              loading="lazy"
+            />
+          </div>
           <div class="d-flex flex-column lh-1">
-            <span class="fw-semibold brand-text">Instrutora Jaquelinr</span>
-            <span class="brand-subtext">Instrutora credenciada CNH Brasil</span>
+            <span class="fw-semibold brand-text">Instrutora Jaque</span>
+            <span class="brand-subtext">Professora de direção para habilitados</span>
           </div>
         </a>
 
@@ -153,8 +156,16 @@
                   </span>
                 </div>
 
+                <div class="mb-3">
+                  <img
+                    src="./assets/logotipo/branco.png"
+                    alt="Logotipo Instrutora Jaque"
+                    class="brand-logo"
+                    style="max-height: 40px"
+                  />
+                </div>
                 <h1 class="display-5 fw-semibold mb-3">
-                  Aulas de direção para quem quer
+                  Aulas de direção para
                   <span class="text-highlight">dirigir com segurança</span>.
                 </h1>
                 <p class="lead text-muted mb-4" x-text="hero.subtitle"></p>
@@ -202,7 +213,7 @@
               <div class="hero-photo-wrapper animate-on-scroll" data-animate="fade-left">
                 <div class="hero-photo-glass"></div>
                 <img
-                  src="./assets/header-perfil.png"
+                  src="./assets/jaqueline/header.png"
                   alt="Instrutora Jaque em aula de direção"
                   class="hero-photo img-fluid"
                   loading="lazy"
@@ -232,6 +243,65 @@
           <span class="small d-block mb-1">Role para ver mais</span>
           <span class="material-icons-round">expand_more</span>
         </button>
+      </section>
+
+      <!-- Sobre -->
+      <section id="sobre" class="section-padding">
+        <div class="container-xxl">
+          <div class="row align-items-center gy-5">
+            <div class="col-lg-5">
+              <div
+                class="about-photo-wrapper animate-on-scroll"
+                data-animate="fade-right"
+              >
+                <div class="about-photo-glass"></div>
+                <!-- Desktop / tablet: foto de perfil tradicional -->
+                <img
+                  src="./assets/jaqueline/perfil1.jpg"
+                  alt="Foto de perfil da Instrutora Jaque"
+                  class="about-photo img-fluid d-none d-md-block"
+                  loading="lazy"
+                />
+                <!-- Mobile: usar a mesma foto do header -->
+                <img
+                  src="./assets/jaqueline/header.png"
+                  alt="Instrutora Jaque em aula de direção"
+                  class="about-photo img-fluid d-block d-md-none"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-7">
+              <div
+                class="glass-card p-4 p-md-5 animate-on-scroll"
+                data-animate="fade-left"
+              >
+                <h2 class="section-title mb-3">Sobre a Instrutora Jaque</h2>
+                <p class="section-subtitle mb-4" x-text="sobre.resumo"></p>
+
+                <div class="row g-4">
+                  <div class="col-md-4">
+                    <h3 class="h6 text-uppercase text-muted mb-2">Missão</h3>
+                    <p class="small mb-0" x-text="sobre.missao"></p>
+                  </div>
+                  <div class="col-md-4">
+                    <h3 class="h6 text-uppercase text-muted mb-2">Visão</h3>
+                    <p class="small mb-0" x-text="sobre.visao"></p>
+                  </div>
+                  <div class="col-md-4">
+                    <h3 class="h6 text-uppercase text-muted mb-2">Valores</h3>
+                    <ul class="small mb-0 ps-3">
+                      <template x-for="(valor, index) in sobre.valores" :key="index">
+                        <li x-text="valor"></li>
+                      </template>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Vantagens -->
@@ -276,13 +346,13 @@
       <section id="servicos" class="section-padding section-light">
         <div class="container-xxl">
           <div class="row justify-content-between align-items-start gy-4">
-            <div class="col-lg-6">
+            <div class="col-lg-5">
               <div
-                class="glass-card h-100 p-4 p-md-5 animate-on-scroll"
+                class="glass-card h-100 p-4 p-md-5 animate-on-scroll" 
                 data-animate="fade-right"
               >
-                <h2 class="section-title mb-3">Como funcionam as aulas</h2>
-                <p class="section-subtitle mb-4">
+                <h2 class="section-title mb-5">Como funcionam as aulas</h2>
+                <p class="section-subtitle mb-3">
                   Você não precisa saber nada de direção. A Jaque te acompanha do primeiro
                   contato até o momento em que você se sente pronta(o) para dirigir.
                 </p>
@@ -303,7 +373,7 @@
               </div>
             </div>
 
-            <div class="col-lg-5">
+            <div class="col-lg-7">
               <div
                 class="glass-card h-100 p-4 p-md-5 animate-on-scroll"
                 data-animate="fade-left"
@@ -331,59 +401,88 @@
         </div>
       </section>
 
-      <!-- Sobre -->
-      <section id="sobre" class="section-padding">
+      <!-- Alunos aprovados -->
+      <section id="aprovados" class="section-padding">
         <div class="container-xxl">
-          <div class="row align-items-center gy-5">
-            <div class="col-lg-5">
-              <div
-                class="about-photo-wrapper animate-on-scroll"
-                data-animate="fade-right"
-              >
-                <div class="about-photo-glass"></div>
-                <!-- Desktop / tablet: foto de perfil tradicional -->
-                <img
-                  src="./assets/perfil.jpg"
-                  alt="Foto de perfil da Instrutora Jaque"
-                  class="about-photo img-fluid d-none d-md-block"
-                  loading="lazy"
-                />
-                <!-- Mobile: usar a mesma foto do header -->
-                <img
-                  src="./assets/header-perfil.png"
-                  alt="Instrutora Jaque em aula de direção"
-                  class="about-photo img-fluid d-block d-md-none"
-                  loading="lazy"
-                />
+          <div class="row justify-content-between align-items-start gy-4">
+            <!-- Vídeo convite -->
+            <div class="col-lg-4">
+              <div class="glass-card h-100 p-4 p-md-5 animate-on-scroll" data-animate="fade-right">
+                <h2 class="section-title mb-5">Quero te convidar para dirigir comigo</h2>
+                <p class="section-subtitle mb-5">
+                  Há 15 anos ajudando pessoas habilitadas a voltarem a dirigir com segurança. Quero te convidar para viver essa nova fase comigo ao volante.
+                </p>
+                <div class="ratio ratio-16x9 rounded-4 overflow-hidden mb-3">
+                  <video
+                    :src="aprovados.videoConvite"
+                    class="w-100 h-100"
+                    controls
+                    preload="metadata"
+                  ></video>
+                </div>
+                <p class="small text-muted mb-0">
+                  Vídeo convite da Jaque para essa nova fase, pensado especialmente para quem quer dar o próximo passo e dirigir com segurança.
+                </p>
               </div>
             </div>
 
-            <div class="col-lg-7">
-              <div
-                class="glass-card p-4 p-md-5 animate-on-scroll"
-                data-animate="fade-left"
-              >
-                <h2 class="section-title mb-3">Sobre a Instrutora Jaque</h2>
-                <p class="section-subtitle mb-4" x-text="sobre.resumo"></p>
+            <!-- Slider de aprovados -->
+            <div class="col-lg-8">
+              <div class="glass-card h-100 p-3 p-md-4 animate-on-scroll" data-animate="fade-left">
+                <h2 class="section-title mb-3" x-text="aprovados.titulo"></h2>
+                <p class="section-subtitle mb-4" x-text="aprovados.descricao"></p>
 
-                <div class="row g-4">
-                  <div class="col-md-4">
-                    <h3 class="h6 text-uppercase text-muted mb-2">Missão</h3>
-                    <p class="small mb-0" x-text="sobre.missao"></p>
+                <div
+                  class="aprovados-slider"
+                  @mouseenter="stopAprovadosSlider()"
+                  @mouseleave="startAprovadosSlider()"
+                >
+                  <div class="aprovados-track">
+                    <template x-for="(img, index) in aprovados.imagens" :key="index">
+                      <figure
+                        class="aprovado-item"
+                        x-show="index === aprovadosCurrentIndex"
+                        x-transition
+                        @click="openAprovadosModal(img)"
+                      >
+                        <img :src="img.src" :alt="img.alt" loading="lazy" />
+                      </figure>
+                    </template>
                   </div>
-                  <div class="col-md-4">
-                    <h3 class="h6 text-uppercase text-muted mb-2">Visão</h3>
-                    <p class="small mb-0" x-text="sobre.visao"></p>
-                  </div>
-                  <div class="col-md-4">
-                    <h3 class="h6 text-uppercase text-muted mb-2">Valores</h3>
-                    <ul class="small mb-0 ps-3">
-                      <template x-for="(valor, index) in sobre.valores" :key="index">
-                        <li x-text="valor"></li>
-                      </template>
-                    </ul>
+
+                  <button
+                    type="button"
+                    class="aprovados-arrow aprovados-arrow-left"
+                    @click="prevAprovadosSlide()"
+                    aria-label="Foto anterior"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    class="aprovados-arrow aprovados-arrow-right"
+                    @click="nextAprovadosSlide()"
+                    aria-label="Próxima foto"
+                  >
+                    ›
+                  </button>
+
+                  <div class="aprovados-dots">
+                    <template x-for="(img, index) in aprovados.imagens" :key="'dot-' + index">
+                      <button
+                        type="button"
+                        class="aprovados-dot"
+                        :class="{'is-active': index === aprovadosCurrentIndex}"
+                        @click="goToAprovadosSlide(index)"
+                        :aria-label="`Ir para a foto ${index + 1}`"
+                      ></button>
+                    </template>
                   </div>
                 </div>
+
+                <p class="small text-muted mt-3 mb-0">
+                  Essas são apenas algumas histórias. O próximo aprovado pode ser você.
+                </p>
               </div>
             </div>
           </div>
@@ -460,14 +559,6 @@
                       <i class="bi bi-whatsapp"></i>
                       <span>Falar sobre este plano</span>
                     </a>
-                    <a
-                      :href="plano.checkoutUrl"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="btn btn-generic w-100 d-flex align-items-center justify-content-center gap-2"
-                    >
-                      <span>Escolher este plano</span>
-                    </a>
                     <p class="small text-muted text-center mb-0">
                       Resposta rápida pelo WhatsApp.
                     </p>
@@ -475,6 +566,60 @@
                 </article>
               </div>
             </template>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quero dirigir com a CNH Brasil -->
+      <section id="quero-dirigir" class="section-padding section-light section-cnh">
+        <div class="container-xxl">
+          <div class="row align-items-stretch gy-4">
+            <div class="col-lg-6 d-flex">
+              <div class="glass-card p-4 p-md-5 animate-on-scroll w-100" data-animate="fade-left">
+                <h2 class="section-title mb-3" x-text="cnh.titulo"></h2>
+                <p class="section-subtitle mb-4" x-text="cnh.texto"></p>
+
+                <div class="d-flex flex-wrap gap-3 align-items-center mb-4">
+                  <a
+                    :href="cnh.url"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-cnh-link d-inline-flex align-items-center gap-2"
+                    aria-label="Abrir página da CNH Brasil"
+                  >
+                    <img src="./assets/logotipo/cnhbrasil.jpeg" alt="Logo CNH Brasil" />
+                    <span x-text="cnh.ctaLabel"></span>
+                  </a>
+                  <span class="small text-muted">
+                    O agendamento e os detalhes formais ficam centralizados na CNH Brasil.
+                  </span>
+                </div>
+
+                <p class="small text-muted mb-0" x-text="cnh.descricao"></p>
+              </div>
+            </div>
+
+            <div class="col-lg-6 d-flex">
+              <div class="p-4 p-md-5 animate-on-scroll w-100" data-animate="fade-right">
+                <h2 class="section-title mb-3">Veja uma mensagem especial</h2>
+                <p class="section-subtitle mb-4">
+                  Entenda melhor como funciona essa parceria com a CNH Brasil e como as aulas com a Jaque entram nesse processo.
+                </p>
+
+                <div class="ratio ratio-16x9 rounded-4 overflow-hidden mb-3">
+                  <video
+                    src="assets/videos/novidade.mp4"
+                    class="w-100 h-100"
+                    controls
+                    preload="metadata"
+                  ></video>
+                </div>
+
+                <p class="small text-muted mb-0">
+                  Esse vídeo foi pensado para tirar as principais dúvidas de quem está começando essa jornada para dirigir com segurança.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -527,7 +672,7 @@
                 <div class="row g-3 align-items-center">
                   <div class="col-6">
                     <div class="qrcode-placeholder glass-card-subtle">
-                      <img src="./assets/qr-code.png" alt="QRCode do WhatsApp" class="mb-2">
+                      <img src="./assets/qr-code.png" alt="QRCode do WhatsApp da Instrutora Jaque" class="mb-2">
                       <p class="small mb-0 text-muted text-center">
                         Espaço para QRCode personalizado do WhatsApp.
                       </p>
@@ -613,7 +758,7 @@
                   </template>
                 </div>
 
-                <p class="small text-muted mb-0 mt-auto">
+                <p class="small text-muted mb-0">
                   <span class="material-icons-round align-middle me-1">
                     favorite
                   </span>
@@ -623,105 +768,51 @@
             </div>
           </div>
         </div>
-      </section>
 
-      <!-- Quero dirigir com a CNH Brasil -->
-      <section id="quero-dirigir" class="section-padding section-light section-cnh">
-        <div class="container-xxl">
-          <div class="row align-items-center gy-4">
-            <div class="col-lg-6">
-              <div class="glass-card p-4 p-md-5 animate-on-scroll" data-animate="fade-left">
-                <h2 class="section-title mb-3" x-text="cnh.titulo"></h2>
-                <p class="section-subtitle mb-4" x-text="cnh.texto"></p>
-
-                <div class="d-flex flex-wrap gap-3 align-items-center mb-4">
-                  <a
-                    :href="cnh.url"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn btn-cnh-link d-inline-flex align-items-center gap-2"
-                    aria-label="Abrir página da CNH Brasil"
-                  >
-                    <img src="./assets/cnhbrasil.jpeg" alt="Logo CNH Brasil" />
-                    <span x-text="cnh.ctaLabel"></span>
-                  </a>
-                  <span class="small text-muted">
-                    O agendamento e os detalhes formais ficam centralizados na CNH Brasil.
-                  </span>
-                </div>
-
-                <p class="small text-muted mb-0" x-text="cnh.descricao"></p>
-              </div>
-            </div>
-          </div>
+      <!-- Modal de imagem em tela cheia -->
+      <div
+        class="aprovados-modal"
+        x-show="aprovadosModalOpen"
+        x-transition
+        @click.self="closeAprovadosModal()"
+      >
+        <div class="aprovados-modal-content">
+          <button
+            type="button"
+            class="aprovados-modal-close"
+            @click="closeAprovadosModal()"
+            aria-label="Fechar visualização de imagem"
+          >
+            ×
+          </button>
+          <img
+            x-show="aprovadosModalImage"
+            :src="aprovadosModalImage && aprovadosModalImage.src"
+            :alt="aprovadosModalImage && aprovadosModalImage.alt"
+          />
         </div>
-      </section>
-
-      <!-- Experiência na prática -->
-      <section id="experiencia" class="section-padding section-alt">
-        <div class="container-xxl">
-          <div class="row justify-content-between align-items-start gy-4">
-            <div class="col-lg-4">
-              <div class="glass-card h-100 p-3 p-md-4 animate-on-scroll" data-animate="fade-right">
-                <h2 class="section-title mb-3">Seu espaço no carro</h2>
-                <div class="ratio ratio-4x3 rounded-4 overflow-hidden mb-3">
-                  <img
-                    :src="experiencia.carroImagem"
-                    alt="Carro da instrutora em que acontecem as aulas"
-                    class="w-100 h-100"
-                    style="object-fit: cover"
-                  />
-                </div>
-                <p class="small text-muted mb-0" x-text="experiencia.carroDescricao"></p>
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <div class="glass-card h-100 p-3 p-md-4 animate-on-scroll" data-animate="fade-up">
-                <h2 class="section-title mb-3">Veja uma aula na prática</h2>
-                <div class="ratio ratio-16x9 rounded-4 overflow-hidden mb-3">
-                  <iframe
-                    :src="experiencia.videoUrl"
-                    title="Vídeo de aula de direção com a Instrutora Jaque"
-                    frameborder="0"
-                    allowfullscreen
-                    loading="lazy"
-                  ></iframe>
-                </div>
-                <p class="small text-muted mb-0">
-                  O vídeo é um exemplo do clima das aulas e da didática usada com os alunos.
-                </p>
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <div class="glass-card h-100 p-3 p-md-4 animate-on-scroll" data-animate="fade-left">
-                <h2 class="section-title mb-3">Quem já dirigiu com a Jaque</h2>
-                <ul class="list-unstyled mb-0 small">
-                  <template x-for="(fb, index) in experiencia.feedbacks" :key="index">
-                    <li class="mb-3">
-                      <p class="mb-1 fw-semibold" x-text="fb.nome"></p>
-                      <p class="mb-1" x-text="fb.texto"></p>
-                      <p class="mb-0 text-muted" x-text="fb.contexto"></p>
-                    </li>
-                  </template>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
     </main>
 
     <!-- Footer -->
     <footer class="footer border-top border-light-subtle">
       <div class="container-xxl py-3 d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
-        <p class="small mb-0 text-muted">
-          &copy; <span x-text="new Date().getFullYear()"></span>
-          Instrutora Jaqueline. Todos os direitos reservados.
-        </p>
-        <p class="small mb-0 text-muted d-flex align-items-center gap-1">
-          <span>Desenvolvido por Matheus bonotto Fundador da <a href="https://squidev.com.br/" target="_blank">Squidev</a></span>
+        <div class="d-flex align-items-center gap-2">
+          <div class="brand-mark">
+            <img
+              src="./assets/logotipo/branco.svg"
+              alt="Logotipo Instrutora Jaque"
+              class="brand-logo"
+              loading="lazy"
+            />
+          </div>
+          <p class="small mb-0 text-muted">
+            &copy; <span x-text="new Date().getFullYear()"></span>
+            Instrutora Jaque. Todos os direitos reservados.
+          </p>
+        </div>
+        <p class="small mb-0 text-muted d-flex align-items-center gap-1 text-center text-md-end">
+          <span>Desenvolvido por Matheus Bonotto, fundador da <a href="https://squidev.com.br/" target="_blank">Squidev</a></span>
         </p>
       </div>
     </footer>

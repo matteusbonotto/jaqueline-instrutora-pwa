@@ -1,10 +1,10 @@
 {
   "hero": {
-    "subtitle": "Aulas de direção categoria B com atendimento em domicílio. Rápido, fácil, sem burocracia. Foco em quem está começando do zero ou quer perder o medo de dirigir.",
+    "subtitle": "Há 15 anos levando pessoas a terem confiança para dirigir.",
     "badges": [
-      "Categoria B",
+      "Professora de direção para habilitados",
       "Atendimento em domicílio",
-      "Instrutora credenciada há 16 anos"
+      "+ de 5 mil alunos atendidos"
     ]
   },
   "vantagens": [
@@ -98,17 +98,18 @@
     ]
   },
   "sobre": {
-    "resumo": "A Instrutora Jaque é instrutora de trânsito credenciada pelo Detran há 16 anos, com foco em pessoas que estão dando os primeiros passos ao volante ou que querem dirigir com mais segurança no dia a dia. Com mais de 10.000 alunos atendidos, o objetivo é transformar medo em confiança, com aulas claras, acolhedoras e realistas.",
-    "missao": "Ajudar pessoas a se sentirem seguras e preparadas para dirigir, respeitando o tempo de cada aluno e valorizando a responsabilidade no trânsito. Sem taxas extras, com total apoio e suporte até você se sentir seguro.",
-    "visao": "Ser referência em aulas de direção personalizadas, colocando o cuidado com o aluno e a segurança acima de qualquer pressa.",
+    "resumo": "Sou a Jaque, professora de direção para habilitados há 15 anos, ajudando pessoas a perder o medo de dirigir e a se sentirem realmente seguras no trânsito. Já acompanhei mais de 5 mil alunos em diferentes fases: quem nunca dirigiu, quem ficou anos sem pegar no volante e quem precisa daquele reforço final para se soltar de vez.",
+    "missao": "Ajudar você a dirigir com confiança, sem julgamentos, com linguagem simples e acolhimento emocional em cada aula. A ideia é que você se sinta à vontade para errar, perguntar e repetir quantas vezes forem necessárias.",
+    "visao": "Ser referência em aulas de direção personalizadas para habilitados, mostrando que é possível voltar a dirigir ou começar do zero em um ambiente seguro e respeitoso.",
     "valores": [
       "Calma e empatia em todas as aulas",
-      "Compromisso com a segurança",
-      "Respeito à individualidade de cada pessoa",
+      "Acolhimento emocional do início ao fim",
+      "Respeito à história e ao ritmo de cada pessoa",
       "Transparência na comunicação",
-      "Experiência de 16 anos credenciada pelo Detran",
-      "Mais de 10.000 alunos atendidos com sucesso"
-    ]
+      "Experiência prática de 15 anos no trânsito",
+      "+ de 5 mil alunos atendidos"
+    ],
+    "sobreMimTexto": "Queria falar um pouco sobre mim. Depois de muitos anos atendendo pessoas com medo de dirigir, entendi que meu trabalho vai muito além do carro: é sobre autoconfiança, autonomia e novas fases de vida. Estou em um novo momento profissional e pessoal, e quero que você faça parte disso. Depois de me conhecer melhor, chegou a sua vez: me conta um fato curioso sobre você?"
   },
   "planos": [
     {
@@ -116,8 +117,8 @@
       "nome": "Aula avulsa",
       "etiqueta": "Ideal para experimentar",
       "descricao": "Uma aula para você sentir a didática, ajustar detalhes específicos ou retomar a prática.",
-      "precoTotal": "120",
-      "precoPorAula": "120",
+      "precoTotal": "180,00",
+      "precoPorAula": "180,00",
       "quantidadeAulas": 1,
       "economia": "Formato avulso, ideal para começar.",
       "itens": [
@@ -129,13 +130,13 @@
       "checkoutUrl": "https://seu-link-de-checkout-aula-avulsa.com"
     },
     {
-      "id": "pacote-5",
-      "nome": "Pacote com 5 aulas",
+      "id": "pacote-6",
+      "nome": "Pacote com 6 aulas",
       "etiqueta": "Ritmo consistente",
       "descricao": "Para quem quer criar base sólida e ganhar segurança no trânsito.",
-      "precoTotal": "550",
-      "precoPorAula": "110",
-      "quantidadeAulas": 5,
+      "precoTotal": "750,00",
+      "precoPorAula": "125,00",
+      "quantidadeAulas": 6,
       "economia": "Economia em relação à aula avulsa, com sequência planejada.",
       "itens": [
         "Planejamento de aulas de acordo com o seu objetivo",
@@ -143,17 +144,17 @@
         "Feedback ao final de cada aula para acompanhar seu progresso"
       ],
       "destaque": false,
-      "checkoutUrl": "https://seu-link-de-checkout-pacote-5-aulas.com"
+      "checkoutUrl": "https://seu-link-de-checkout-pacote-6-aulas.com"
     },
     {
       "id": "pacote-10",
       "nome": "Pacote com 10 aulas",
       "etiqueta": "Imersão completa",
       "descricao": "Para quem quer treinar diferentes situações com mais calma e repetição.",
-      "precoTotal": "1.050",
-      "precoPorAula": "105",
+      "precoTotal": "1.200,00",
+      "precoPorAula": "120,00",
       "quantidadeAulas": 10,
-      "economia": "Melhor custo por aula dentro dos pacotes disponíveis.",
+      "economia": "Custo-benefício equilibrado para um acompanhamento mais completo.",
       "itens": [
         "Tempo ideal para construir confiança passo a passo",
         "Treino em diversos horários e rotas, conforme disponibilidade",
@@ -161,6 +162,40 @@
       ],
       "destaque": true,
       "checkoutUrl": "https://seu-link-de-checkout-pacote-10-aulas.com"
+    },
+    {
+      "id": "pacote-16",
+      "nome": "Pacote com 16 aulas",
+      "etiqueta": "Treino avançado",
+      "descricao": "Para quem quer treinar várias situações de trânsito com repetição e tranquilidade.",
+      "precoTotal": "1.700,00",
+      "precoPorAula": "106,25",
+      "quantidadeAulas": 16,
+      "economia": "Mais tempo de prática com valor por aula reduzido.",
+      "itens": [
+        "Maior variedade de rotas e horários",
+        "Refinamento de manobras e situações específicas",
+        "Foco em chegar muito mais seguro(a) ao volante"
+      ],
+      "destaque": false,
+      "checkoutUrl": "https://seu-link-de-checkout-pacote-16-aulas.com"
+    },
+    {
+      "id": "pacote-20",
+      "nome": "Pacote Premium - 20 aulas",
+      "etiqueta": "Pacote Premium",
+      "descricao": "Uma jornada completa para quem quer se sentir totalmente à vontade dirigindo em diferentes contextos.",
+      "precoTotal": "1.850,00",
+      "precoPorAula": "92,50",
+      "quantidadeAulas": 20,
+      "economia": "Melhor custo por aula entre os pacotes, com máximo tempo de prática.",
+      "itens": [
+        "Acompanhamento próximo em toda a jornada",
+        "Treino intenso em diferentes horários, vias e cenários",
+        "Mais espaço para repetir, revisar e consolidar tudo o que você precisa"
+      ],
+      "destaque": false,
+      "checkoutUrl": "https://seu-link-de-checkout-pacote-20-aulas.com"
     }
   ],
   "whatsapp": {
@@ -184,23 +219,16 @@
   "redes": [
     {
       "id": "instagram",
-      "nome": "Instagram",
+      "nome": "@jaque_rodriguesantos",
       "tipo": "instagram",
       "icone": "bi bi-instagram",
-      "url": "https://instagram.com"
-    },
-    {
-      "id": "facebook",
-      "nome": "Facebook",
-      "tipo": "facebook",
-      "icone": "bi bi-facebook",
-      "url": "https://facebook.com"
+      "url": "https://www.instagram.com/jaque_rodriguesantos"
     }
   ],
   "experiencia": {
-    "carroImagem": "assets/veiculo.png",
-    "carroDescricao": "Imagem ilustrativa do carro usado nas aulas. Você pode substituir por uma foto real do veículo da instrutora.",
-    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "carroImagem": "assets/jaqueline/veiculo.png",
+    "carroDescricao": "Carro de treinamento preparado para receber quem está começando ou voltando a dirigir, com ambiente acolhedor e foco total na sua segurança.",
+    "videoUrl": "assets/videos/novidade.mp4",
     "feedbacks": [
       {
         "nome": "Aluna que tinha medo de dirigir",
@@ -225,6 +253,25 @@
     "texto": "As aulas práticas com a Jaque são o seu momento de ganhar confiança e vivência real no trânsito. Já a CNH Brasil concentra a parte de documentação, prazos e processos formais. Assim, você tem um caminho organizado: acolhimento nas aulas e estrutura na autoescola.",
     "ctaLabel": "Ir para a página da CNH Brasil",
     "url": "https://www.gov.br/transportes/pt-br/cnh-do-brasil"
+  },
+  "aprovados": {
+    "titulo": "Alunos aprovados e cheios de confiança",
+    "descricao": "Veja algumas pessoas que venceram o medo de dirigir e hoje encaram o trânsito com muito mais segurança.",
+    "imagens": [
+      {
+        "src": "assets/alunos-aprovados/1.png",
+        "alt": "Aluna aprovada nas aulas de direção com a Instrutora Jaque"
+      },
+      {
+        "src": "assets/alunos-aprovados/2.png",
+        "alt": "Aluno aprovado nas aulas de direção com a Instrutora Jaque"
+      },
+      {
+        "src": "assets/alunos-aprovados/3.png",
+        "alt": "Mais um aluno aprovado e confiante para dirigir"
+      }
+    ],
+    "videoConvite": "assets/videos/convite.mp4"
   }
 }
 
