@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="pt-BR" x-data="landingApp()" x-init="init()" :class="theme">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Instrutora Jaquelinr | Aulas de Direção Categoria B</title>
+    <meta
+      name="description"
+      content="Aulas de direção categoria B com a Instrutora Jaque. Atendimento em domicílio, foco em iniciantes e pessoas com medo de dirigir."
+    />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#111111" />
+
+    <!-- iOS / Apple -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="apple-touch-icon" href="assets/perfil.jpg" />
+
+    <!-- Favicon genérico (pode ser substituído depois) -->
+    <link rel="icon" href="assets/perfil.jpg" />
+
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <!-- Material Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+    />
+
+    <!-- App styles -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="bg-body text-light">
+    <!-- Navegação fixa -->
+    <header
+      id="topo"
+      class="navbar navbar-expand-lg fixed-top glass-nav border-bottom border-light-subtle"
+    >
+      <div class="container-xxl">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#topo">
+          <div class="d-flex flex-column lh-1">
+            <span class="fw-semibold brand-text">Instrutora Jaquelinr</span>
+            <span class="brand-subtext">Instrutora credenciada CNH Brasil</span>
+          </div>
+        </a>
+
+        <button
+          class="navbar-toggler border-0 shadow-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Alternar navegação"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+          <ul class="navbar-nav align-items-lg-center gap-lg-3">
+            <li class="nav-item">
+              <a class="nav-link" href="#vantagens">Vantagens</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#servicos">Serviços</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sobre">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#planos">Pacotes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contato">Contato</a>
+            </li>
+            <li class="nav-item d-none d-lg-block">
+              <button
+                class="btn btn-sm btn-generic px-3"
+                type="button"
+                @click="scrollToSection('contato')"
+              >
+                Quero dirigir com segurança
+              </button>
+            </li>
+            <li class="nav-item ms-lg-2">
+              <button
+                x-show="canInstall"
+                x-transition
+                @click="promptInstall"
+                class="btn btn-sm btn-install-app d-flex align-items-center gap-1"
+                type="button"
+              >
+                <span class="material-icons-round">download</span>
+                <span>Instalar app</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <main>
+      <section id="hero" class="hero-section position-relative overflow-hidden">
+        <!-- Background imagem trânsito -->
+        <div class="hero-bg position-absolute top-0 start-0 w-100 h-100">
+          <div class="hero-bg-image"></div>
+          <div class="hero-overlay"></div>
+        </div>
+
+        <div class="container-xxl position-relative z-2">
+          <div class="row align-items-center min-vh-100 py-6 gy-5">
+            <div class="col-lg-6">
+              <div
+                class="glass-card hero-card p-4 p-md-5 animate-on-scroll"
+                data-animate="fade-up"
+              >
+                <div class="d-inline-flex align-items-center gap-2 mb-3">
+                  <span class="status-dot bg-success"></span>
+                  <span class="text-uppercase small text-muted">
+                    Aulas de direção • Categoria B
+                  </span>
+                </div>
+
+                <h1 class="display-5 fw-semibold mb-3">
+                  Aulas de direção para quem quer
+                  <span class="text-highlight">dirigir com segurança</span>.
+                </h1>
+                <p class="lead text-muted mb-4" x-text="hero.subtitle"></p>
+
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                  <template x-for="badge in hero.badges" :key="badge">
+                    <span class="badge badge-glass d-inline-flex align-items-center gap-1">
+                      <span class="material-icons-round badge-icon">check_circle</span>
+                      <span x-text="badge"></span>
+                    </span>
+                  </template>
+                </div>
+
+                <div class="d-flex flex-wrap gap-3 align-items-center mb-3">
+                  <a
+                    :href="whatsapp.url"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-lg btn-whatsapp d-inline-flex align-items-center gap-2"
+                    aria-label="Falar com a Instrutora Jaque pelo WhatsApp"
+                  >
+                    <i class="bi bi-whatsapp"></i>
+                    <span x-text="whatsapp.ctaLabel"></span>
+                  </a>
+                  <button
+                    class="btn btn-lg btn-outline-light btn-generic-alt"
+                    type="button"
+                    @click="scrollToSection('planos')"
+                  >
+                    Ver pacotes
+                  </button>
+                </div>
+
+                <p class="small text-muted">
+                  <span class="material-icons-round align-middle me-1 text-success">
+                    verified_user
+                  </span>
+                  Instrutora credenciada e especializada em pessoas iniciantes ou com medo
+                  de dirigir.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-5 offset-lg-1">
+              <div class="hero-photo-wrapper animate-on-scroll" data-animate="fade-left">
+                <div class="hero-photo-glass"></div>
+                <img
+                  src="assets/header-perfil.png"
+                  alt="Instrutora Jaque em aula de direção"
+                  class="hero-photo img-fluid"
+                  loading="lazy"
+                />
+                <div class="hero-floating-badge glass-card">
+                  <div class="d-flex align-items-center gap-3">
+                    <div class="icon-circle bg-success-subtle">
+                      <span class="material-icons-round text-success">emoji_events</span>
+                    </div>
+                    <div>
+                      <p class="mb-0 small text-muted">Foco total no seu tempo</p>
+                      <p class="mb-0 fw-semibold">Aulas personalizadas</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll hint -->
+        <button
+          class="scroll-indicator btn btn-link text-decoration-none text-light"
+          type="button"
+          @click="scrollToSection('vantagens')"
+        >
+          <span class="small d-block mb-1">Role para ver mais</span>
+          <span class="material-icons-round">expand_more</span>
+        </button>
+      </section>
+
+      <!-- Vantagens -->
+      <section id="vantagens" class="section-padding">
+        <div class="container-xxl">
+          <div class="row justify-content-between align-items-end mb-4 mb-md-5">
+            <div class="col-md-7">
+              <h2 class="section-title">Por que aprender com a Jaque?</h2>
+              <p class="section-subtitle">
+                Aulas pensadas para quem precisa de calma, clareza e um passo a passo
+                seguro até a habilitação.
+              </p>
+            </div>
+            <div class="col-md-4 text-md-end">
+              <span class="badge text-bg-dark rounded-pill px-3 py-2 small">
+                <span class="material-icons-round align-middle me-1">psychology</span>
+                Didática acolhedora
+              </span>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <template x-for="(vantagem, index) in vantagens" :key="index">
+              <div class="col-12 col-md-6 col-lg-4">
+                <article
+                  class="glass-card card-advantage h-100 animate-on-scroll"
+                  data-animate="fade-up"
+                >
+                  <div class="icon-circle mb-3" :class="vantagem.iconBg">
+                    <i :class="vantagem.icon"></i>
+                  </div>
+                  <h3 class="h5 mb-2" x-text="vantagem.title"></h3>
+                  <p class="text-muted mb-0" x-text="vantagem.description"></p>
+                </article>
+              </div>
+            </template>
+          </div>
+        </div>
+      </section>
+
+      <!-- Serviços -->
+      <section id="servicos" class="section-padding section-light">
+        <div class="container-xxl">
+          <div class="row justify-content-between align-items-start gy-4">
+            <div class="col-lg-6">
+              <div
+                class="glass-card h-100 p-4 p-md-5 animate-on-scroll"
+                data-animate="fade-right"
+              >
+                <h2 class="section-title mb-3">Como funcionam as aulas</h2>
+                <p class="section-subtitle mb-4">
+                  Você não precisa saber nada de direção. A Jaque te acompanha do primeiro
+                  contato até o momento em que você se sente pronta(o) para dirigir.
+                </p>
+
+                <ol class="timeline-steps list-unstyled">
+                  <template x-for="(step, index) in servicos.fluxo" :key="index">
+                    <li class="timeline-step">
+                      <div class="step-marker">
+                        <span class="step-index" x-text="index + 1"></span>
+                      </div>
+                      <div class="step-content">
+                        <h3 class="h6 mb-1" x-text="step.title"></h3>
+                        <p class="small text-muted mb-0" x-text="step.description"></p>
+                      </div>
+                    </li>
+                  </template>
+                </ol>
+              </div>
+            </div>
+
+            <div class="col-lg-5">
+              <div
+                class="glass-card h-100 p-4 p-md-5 animate-on-scroll"
+                data-animate="fade-left"
+              >
+                <h2 class="section-title mb-3">O que você vai aprender</h2>
+                <p class="section-subtitle mb-4">
+                  Situações reais de trânsito, simulando o máximo possível do seu dia a
+                  dia com o carro.
+                </p>
+
+                <ul class="list-unstyled learning-list">
+                  <template x-for="(item, index) in servicos.conteudos" :key="index">
+                    <li class="learning-item">
+
+                      <div>
+                        <p class="mb-0 fw-semibold" x-text="item.title"></p>
+                        <p class="mb-0 small text-muted" x-text="item.description"></p>
+                      </div>
+                    </li>
+                  </template>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sobre -->
+      <section id="sobre" class="section-padding">
+        <div class="container-xxl">
+          <div class="row align-items-center gy-5">
+            <div class="col-lg-5">
+              <div
+                class="about-photo-wrapper animate-on-scroll"
+                data-animate="fade-right"
+              >
+                <div class="about-photo-glass"></div>
+                <!-- Desktop / tablet: foto de perfil tradicional -->
+                <img
+                  src="assets/perfil.jpg"
+                  alt="Foto de perfil da Instrutora Jaque"
+                  class="about-photo img-fluid d-none d-md-block"
+                  loading="lazy"
+                />
+                <!-- Mobile: usar a mesma foto do header -->
+                <img
+                  src="assets/header-perfil.png"
+                  alt="Instrutora Jaque em aula de direção"
+                  class="about-photo img-fluid d-block d-md-none"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-7">
+              <div
+                class="glass-card p-4 p-md-5 animate-on-scroll"
+                data-animate="fade-left"
+              >
+                <h2 class="section-title mb-3">Sobre a Instrutora Jaque</h2>
+                <p class="section-subtitle mb-4" x-text="sobre.resumo"></p>
+
+                <div class="row g-4">
+                  <div class="col-md-4">
+                    <h3 class="h6 text-uppercase text-muted mb-2">Missão</h3>
+                    <p class="small mb-0" x-text="sobre.missao"></p>
+                  </div>
+                  <div class="col-md-4">
+                    <h3 class="h6 text-uppercase text-muted mb-2">Visão</h3>
+                    <p class="small mb-0" x-text="sobre.visao"></p>
+                  </div>
+                  <div class="col-md-4">
+                    <h3 class="h6 text-uppercase text-muted mb-2">Valores</h3>
+                    <ul class="small mb-0 ps-3">
+                      <template x-for="(valor, index) in sobre.valores" :key="index">
+                        <li x-text="valor"></li>
+                      </template>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pacotes / Planos -->
+      <section id="planos" class="section-padding section-alt">
+        <div class="container-xxl">
+          <div class="row justify-content-between align-items-end mb-4 mb-md-5">
+            <div class="col-md-7">
+              <h2 class="section-title">Pacotes pensados para o seu ritmo</h2>
+              <p class="section-subtitle">
+                Escolha o formato que combina com o seu momento. Sem letras miúdas e com
+                total transparência.
+              </p>
+            </div>
+          </div>
+
+          <div class="row g-4 align-items-stretch">
+            <template x-for="(plano, index) in planos" :key="plano.id">
+              <div class="col-12 col-md-4 d-flex">
+                <article
+                  class="glass-card card-plan flex-fill d-flex flex-column position-relative animate-on-scroll"
+                  :class="{'card-plan-featured': plano.destaque}"
+                  data-animate="fade-up"
+                >
+                  <template x-if="plano.destaque">
+                    <div class="plan-badge">
+                      <span class="material-icons-round me-1">star</span>
+                      Mais popular
+                    </div>
+                  </template>
+
+                  <header class="mb-3">
+                    <p class="text-uppercase small text-muted mb-1" x-text="plano.etiqueta"></p>
+                    <h3 class="h5 mb-1" x-text="plano.nome"></h3>
+                    <p class="small text-muted mb-0" x-text="plano.descricao"></p>
+                  </header>
+
+                  <div class="mt-3 mb-4">
+                    <p class="price-main mb-1">
+                      <span class="price-currency">R$</span>
+                      <span class="price-value" x-text="plano.precoTotal"></span>
+                    </p>
+                    <p class="small text-muted mb-1">
+                      <span x-text="plano.quantidadeAulas"></span>
+                      <span> aula<span x-text="plano.quantidadeAulas > 1 ? 's' : ''"></span></span>
+                      <span> • </span>
+                      <span x-text="`R$ ${plano.precoPorAula} por aula`"></span>
+                    </p>
+                    <p class="small text-success fw-semibold mb-0" x-text="plano.economia"></p>
+                  </div>
+
+                  <ul class="list-unstyled small flex-grow-1 mb-4">
+                    <template x-for="(item, i) in plano.itens" :key="i">
+                      <li class="d-flex align-items-start gap-2 mb-2">
+                        <span class="material-icons-round text-success fs-6">
+                          check_circle
+                        </span>
+                        <span x-text="item"></span>
+                      </li>
+                    </template>
+                  </ul>
+
+                  <div class="mt-auto">
+                    <a
+                      :href="whatsapp.url + encodeURIComponent('Olá, Jaque! Tenho interesse no plano: ' + plano.nome)"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn btn-whatsapp w-100 d-flex align-items-center justify-content-center gap-2 mb-2"
+                      aria-label="Chamar no WhatsApp sobre este plano"
+                    >
+                      <i class="bi bi-whatsapp"></i>
+                      <span>Falar sobre este plano</span>
+                    </a>
+                    <a
+                      :href="plano.checkoutUrl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn btn-generic w-100 d-flex align-items-center justify-content-center gap-2"
+                    >
+                      <span>Escolher este plano</span>
+                    </a>
+                    <p class="small text-muted text-center mb-0">
+                      Resposta rápida pelo WhatsApp.
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </template>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contato -->
+      <section id="contato" class="section-padding section-alt">
+        <div class="container-xxl">
+          <div class="row justify-content-between align-items-end mb-4 mb-md-5">
+            <div class="col-md-7">
+              <h2 class="section-title">Vamos marcar sua primeira aula?</h2>
+              <p class="section-subtitle">
+                Escolha o melhor canal para você. O WhatsApp é o jeito mais rápido para
+                tirar dúvidas e combinar horários.
+              </p>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <!-- WhatsApp -->
+            <div class="col-12 col-lg-5">
+              <div
+                class="glass-card contact-card h-100 animate-on-scroll"
+                data-animate="fade-right"
+              >
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <div>
+                    <h3 class="h5 mb-1">WhatsApp da Instrutora Jaqueline</h3>
+                    <p class="small text-muted mb-0">
+                      Clique no botão ou aponte a câmera para o QRCode.
+                    </p>
+                  </div>
+                  <div class="icon-circle icon-circle-lg bg-success-subtle">
+                    <i class="bi bi-whatsapp text-success fs-3"></i>
+                  </div>
+                </div>
+
+                <p class="contact-phone mb-3" x-text="whatsapp.display"></p>
+
+                <a
+                  :href="whatsapp.url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-whatsapp w-100 d-flex align-items-center justify-content-center gap-2 mb-4"
+                  aria-label="Chamar Instrutora Jaque no WhatsApp"
+                >
+                  <i class="bi bi-whatsapp"></i>
+                  <span>Chamar no WhatsApp agora</span>
+                </a>
+
+                <div class="row g-3 align-items-center">
+                  <div class="col-6">
+                    <div class="qrcode-placeholder glass-card-subtle">
+                      <img src="assets/qr-code.png" alt="QRCode do WhatsApp" class="mb-2">
+                      <p class="small mb-0 text-muted text-center">
+                        Espaço para QRCode personalizado do WhatsApp.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <ul class="list-unstyled small text-muted mb-0">
+                      <li class="mb-1">
+                        <span class="material-icons-round align-middle me-1">
+                          schedule
+                        </span>
+                        <span x-text="whatsapp.horario"></span>
+                      </li>
+                      <li class="mb-1">
+                        <span class="material-icons-round align-middle me-1">
+                          location_on
+                        </span>
+                        <span x-text="whatsapp.regioes"></span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Localização / Regiões -->
+            <div class="col-12 col-lg-4">
+              <div
+                class="glass-card contact-card h-100 animate-on-scroll"
+                data-animate="fade-up"
+              >
+                <h3 class="h6 text-uppercase text-muted mb-2">Regiões de atendimento</h3>
+                <h4 class="h5 mb-3" x-text="contato.enderecoTitulo"></h4>
+
+                <p class="small text-muted mb-3" x-text="contato.enderecoLinha"></p>
+
+                <ul class="list-unstyled small mb-3">
+                  <template x-for="(regiao, index) in contato.regioes" :key="index">
+                    <li class="d-flex align-items-center mb-1">
+                      <span class="material-icons-round align-middle me-1 text-primary">
+                        place
+                      </span>
+                      <span x-text="regiao"></span>
+                    </li>
+                  </template>
+                </ul>
+
+                <p class="small text-muted mb-0" x-text="contato.infoExtra"></p>
+              </div>
+            </div>
+
+            <!-- Redes sociais -->
+            <div class="col-12 col-lg-3">
+              <div
+                class="glass-card contact-card h-100 d-flex flex-column animate-on-scroll"
+                data-animate="fade-left"
+              >
+                <h3 class="h6 text-uppercase text-muted mb-2">Redes sociais</h3>
+                <h4 class="h5 mb-3">Acompanhe a rotina da Jaque</h4>
+
+                <p class="small text-muted mb-3">
+                  Bastidores das aulas, dicas rápidas e conteúdos para quem está se
+                  preparando para a CNH.
+                </p>
+
+                <div class="d-grid gap-2 mb-3">
+                  <template x-for="rede in redes" :key="rede.id">
+                    <a
+                      :href="rede.url"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn d-flex align-items-center justify-content-center gap-2"
+                      :class="{
+                        'btn-instagram': rede.tipo === 'instagram',
+                        'btn-facebook': rede.tipo === 'facebook',
+                        'btn-generic': rede.tipo === 'outro'
+                      }"
+                      :aria-label="`Abrir ${rede.nome}`"
+                    >
+                      <i :class="rede.icone"></i>
+                      <span x-text="rede.nome"></span>
+                    </a>
+                  </template>
+                </div>
+
+                <p class="small text-muted mb-0 mt-auto">
+                  <span class="material-icons-round align-middle me-1">
+                    favorite
+                  </span>
+                  Conteúdo pensado para te deixar mais confiante no trânsito.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quero dirigir com a CNH Brasil -->
+      <section id="quero-dirigir" class="section-padding section-light section-cnh">
+        <div class="container-xxl">
+          <div class="row align-items-center gy-4">
+            <div class="col-lg-6">
+              <div class="glass-card p-4 p-md-5 animate-on-scroll" data-animate="fade-left">
+                <h2 class="section-title mb-3" x-text="cnh.titulo"></h2>
+                <p class="section-subtitle mb-4" x-text="cnh.texto"></p>
+
+                <div class="d-flex flex-wrap gap-3 align-items-center mb-4">
+                  <a
+                    :href="cnh.url"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-cnh-link d-inline-flex align-items-center gap-2"
+                    aria-label="Abrir página da CNH Brasil"
+                  >
+                    <img src="assets/cnhbrasil.jpeg" alt="Logo CNH Brasil" />
+                    <span x-text="cnh.ctaLabel"></span>
+                  </a>
+                  <span class="small text-muted">
+                    O agendamento e os detalhes formais ficam centralizados na CNH Brasil.
+                  </span>
+                </div>
+
+                <p class="small text-muted mb-0" x-text="cnh.descricao"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experiência na prática -->
+      <section id="experiencia" class="section-padding section-alt">
+        <div class="container-xxl">
+          <div class="row justify-content-between align-items-start gy-4">
+            <div class="col-lg-4">
+              <div class="glass-card h-100 p-3 p-md-4 animate-on-scroll" data-animate="fade-right">
+                <h2 class="section-title mb-3">Seu espaço no carro</h2>
+                <div class="ratio ratio-4x3 rounded-4 overflow-hidden mb-3">
+                  <img
+                    :src="experiencia.carroImagem"
+                    alt="Carro da instrutora em que acontecem as aulas"
+                    class="w-100 h-100"
+                    style="object-fit: cover"
+                  />
+                </div>
+                <p class="small text-muted mb-0" x-text="experiencia.carroDescricao"></p>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="glass-card h-100 p-3 p-md-4 animate-on-scroll" data-animate="fade-up">
+                <h2 class="section-title mb-3">Veja uma aula na prática</h2>
+                <div class="ratio ratio-16x9 rounded-4 overflow-hidden mb-3">
+                  <iframe
+                    :src="experiencia.videoUrl"
+                    title="Vídeo de aula de direção com a Instrutora Jaque"
+                    frameborder="0"
+                    allowfullscreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
+                <p class="small text-muted mb-0">
+                  O vídeo é um exemplo do clima das aulas e da didática usada com os alunos.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="glass-card h-100 p-3 p-md-4 animate-on-scroll" data-animate="fade-left">
+                <h2 class="section-title mb-3">Quem já dirigiu com a Jaque</h2>
+                <ul class="list-unstyled mb-0 small">
+                  <template x-for="(fb, index) in experiencia.feedbacks" :key="index">
+                    <li class="mb-3">
+                      <p class="mb-1 fw-semibold" x-text="fb.nome"></p>
+                      <p class="mb-1" x-text="fb.texto"></p>
+                      <p class="mb-0 text-muted" x-text="fb.contexto"></p>
+                    </li>
+                  </template>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer border-top border-light-subtle">
+      <div class="container-xxl py-3 d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+        <p class="small mb-0 text-muted">
+          &copy; <span x-text="new Date().getFullYear()"></span>
+          Instrutora Jaqueline. Todos os direitos reservados.
+        </p>
+        <p class="small mb-0 text-muted d-flex align-items-center gap-1">
+          <span>Desenvolvido por Matheus bonotto Fundador da <a href="https://squidev.com.br/" target="_blank">Squidev</a></span>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Botão flutuante para instalar PWA -->
+    <button
+      x-show="canInstall"
+      x-transition
+      @click="promptInstall"
+      type="button"
+      class="floating-install btn-generic d-flex align-items-center justify-content-center"
+      aria-label="Instalar o app da Instrutora Jaque"
+    >
+      <span class="material-icons-round">download</span>
+    </button>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Primeiro o app (sem defer para garantir que landingApp exista antes do Alpine) -->
+    <script src="/app.js"></script>
+    <!-- Depois o Alpine -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <!-- Registro de Service Worker (fallback extra além do app.js) -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/service-worker.js", { scope: "/" })
+            .then((reg) => {
+              console.log("[SW] Registrado com sucesso", reg.scope);
+              reg.update();
+            })
+            .catch((err) => console.error("[SW] Erro no registro", err));
+        });
+      }
+    </script>
+  </body>
+</html>
+

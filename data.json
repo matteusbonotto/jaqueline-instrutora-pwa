@@ -1,0 +1,218 @@
+{
+  "hero": {
+    "subtitle": "Aulas de direção categoria B com atendimento em domicílio, foco em quem está começando do zero ou quer perder o medo de dirigir nas cidades atendidas.",
+    "badges": [
+      "Categoria B",
+      "Atendimento em domicílio",
+      "Instrutora credenciada"
+    ]
+  },
+  "vantagens": [
+    {
+      "icon": "bi bi-house-check",
+      "iconBg": "icon-bg-yellow",
+      "title": "Aulas onde você precisa",
+      "description": "Atendimento em domicílio nas regiões atendidas, com rotas pensadas para a sua rotina."
+    },
+    {
+      "icon": "bi bi-emoji-smile",
+      "iconBg": "icon-bg-green",
+      "title": "Paciência com iniciantes",
+      "description": "Didática acolhedora, respeitando o seu tempo e explicando cada passo com calma."
+    },
+    {
+      "icon": "bi bi-sign-turn-slight-right",
+      "iconBg": "icon-bg-blue",
+      "title": "Situações reais de trânsito",
+      "description": "Treino em diferentes cenários: bairros, avenidas, cruzamentos e manobras essenciais."
+    },
+    {
+      "icon": "bi bi-clock-history",
+      "iconBg": "icon-bg-yellow",
+      "title": "Horários flexíveis",
+      "description": "Aulas agendadas de acordo com a sua disponibilidade, dentro da agenda da instrutora."
+    },
+    {
+      "icon": "bi bi-shield-check",
+      "iconBg": "icon-bg-green",
+      "title": "Segurança em primeiro lugar",
+      "description": "Foco em direção preventiva e consciência no trânsito, sempre respeitando as regras."
+    },
+    {
+      "icon": "bi bi-person-hearts",
+      "iconBg": "icon-bg-blue",
+      "title": "Apoio emocional",
+      "description": "Acompanhamento cuidadoso para quem sente medo ou ansiedade ao dirigir."
+    }
+  ],
+  "servicos": {
+    "fluxo": [
+      {
+        "title": "Conversa inicial e entendimento",
+        "description": "Você conta sua experiência, suas inseguranças e seus objetivos com a direção."
+      },
+      {
+        "title": "Planejamento das aulas",
+        "description": "Juntas(os), organizamos o melhor formato de aulas para o seu momento."
+      },
+      {
+        "title": "Aulas práticas guiadas",
+        "description": "Passo a passo no carro, sempre com explicações claras e repetição quando necessário."
+      },
+      {
+        "title": "Ajustes finos e reforço",
+        "description": "Refinamos manobras, rotas e situações específicas que você sente mais dificuldade."
+      }
+    ],
+    "conteudos": [
+      {
+        "title": "Domínio básico do veículo",
+        "description": "Posição ao volante, pedais, câmbio, retrovisores e comandos principais."
+      },
+      {
+        "title": "Partidas, paradas e aclives",
+        "description": "Saída em segurança, controle do carro em subidas e uso correto do freio."
+      },
+      {
+        "title": "Baliza e manobras",
+        "description": "Passo a passo de baliza, estacionamento em vagas paralelas e de ré."
+      },
+      {
+        "title": "Trânsito urbano",
+        "description": "Rotatórias, cruzamentos, faixas de pedestre e leitura de sinais."
+      },
+      {
+        "title": "Direção defensiva",
+        "description": "Tomada de decisão, distância segura, antecipação de riscos e postura no trânsito."
+      }
+    ]
+  },
+  "sobre": {
+    "resumo": "A Instrutora Jaque é instrutora de trânsito especializada em categoria B, com foco em pessoas que estão dando os primeiros passos ao volante ou que querem dirigir com mais segurança no dia a dia. O objetivo é transformar medo em confiança, com aulas claras, acolhedoras e realistas.",
+    "missao": "Ajudar pessoas a se sentirem seguras e preparadas para dirigir, respeitando o tempo de cada aluno e valorizando a responsabilidade no trânsito.",
+    "visao": "Ser referência em aulas de direção personalizadas, colocando o cuidado com o aluno e a segurança acima de qualquer pressa.",
+    "valores": [
+      "Calma e empatia em todas as aulas",
+      "Compromisso com a segurança",
+      "Respeito à individualidade de cada pessoa",
+      "Transparência na comunicação"
+    ]
+  },
+  "planos": [
+    {
+      "id": "aula-avulsa",
+      "nome": "Aula avulsa",
+      "etiqueta": "Ideal para experimentar",
+      "descricao": "Uma aula para você sentir a didática, ajustar detalhes específicos ou retomar a prática.",
+      "precoTotal": "120",
+      "precoPorAula": "120",
+      "quantidadeAulas": 1,
+      "economia": "Formato avulso, ideal para começar.",
+      "itens": [
+        "Aula individual de aproximadamente 50 a 60 minutos",
+        "Foco na sua principal dificuldade do momento",
+        "Orientações práticas para você continuar evoluindo"
+      ],
+      "destaque": false,
+      "checkoutUrl": "https://seu-link-de-checkout-aula-avulsa.com"
+    },
+    {
+      "id": "pacote-5",
+      "nome": "Pacote com 5 aulas",
+      "etiqueta": "Ritmo consistente",
+      "descricao": "Para quem quer criar base sólida e ganhar segurança no trânsito.",
+      "precoTotal": "550",
+      "precoPorAula": "110",
+      "quantidadeAulas": 5,
+      "economia": "Economia em relação à aula avulsa, com sequência planejada.",
+      "itens": [
+        "Planejamento de aulas de acordo com o seu objetivo",
+        "Evolução gradual de cenários: bairro, vias mais movimentadas e manobras",
+        "Feedback ao final de cada aula para acompanhar seu progresso"
+      ],
+      "destaque": false,
+      "checkoutUrl": "https://seu-link-de-checkout-pacote-5-aulas.com"
+    },
+    {
+      "id": "pacote-10",
+      "nome": "Pacote com 10 aulas",
+      "etiqueta": "Imersão completa",
+      "descricao": "Para quem quer treinar diferentes situações com mais calma e repetição.",
+      "precoTotal": "1.050",
+      "precoPorAula": "105",
+      "quantidadeAulas": 10,
+      "economia": "Melhor custo por aula dentro dos pacotes disponíveis.",
+      "itens": [
+        "Tempo ideal para construir confiança passo a passo",
+        "Treino em diversos horários e rotas, conforme disponibilidade",
+        "Ajustes finos focados nas situações que mais geram insegurança"
+      ],
+      "destaque": true,
+      "checkoutUrl": "https://seu-link-de-checkout-pacote-10-aulas.com"
+    }
+  ],
+  "whatsapp": {
+    "display": "+55 (19) 99160-6312",
+    "url": "https://wa.me/5519991606312?text=",
+    "ctaLabel": "Falar com a Jaque agora",
+    "horario": "Atendimento de segunda a sábado, conforme agenda da instrutora.",
+    "regioes": "Atendimento em domicílio em regiões específicas, a combinar no contato."
+  },
+  "contato": {
+    "enderecoTitulo": "Regiões de atendimento",
+    "enderecoLinha": "Atendimento em domicílio nas seguintes regiões, a combinar detalhes pelo WhatsApp:",
+    "regioes": [
+      "Zona Norte",
+      "Zona Sul",
+      "Zona Leste",
+      "Zona Oeste"
+    ],
+    "infoExtra": "Dentro de cada região, os pontos exatos de encontro e rotas são combinados individualmente com cada aluno."
+  },
+  "redes": [
+    {
+      "id": "instagram",
+      "nome": "Instagram",
+      "tipo": "instagram",
+      "icone": "bi bi-instagram",
+      "url": "https://instagram.com"
+    },
+    {
+      "id": "facebook",
+      "nome": "Facebook",
+      "tipo": "facebook",
+      "icone": "bi bi-facebook",
+      "url": "https://facebook.com"
+    }
+  ],
+  "experiencia": {
+    "carroImagem": "assets/header-perfil.png",
+    "carroDescricao": "Imagem ilustrativa do carro usado nas aulas. Você pode substituir por uma foto real do veículo da instrutora.",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "feedbacks": [
+      {
+        "nome": "Aluna que tinha medo de dirigir",
+        "texto": "Eu travava só de pensar em pegar o volante. Com as aulas da Jaque, fui ganhando confiança aos poucos e hoje consigo dirigir nas rotas do meu dia a dia.",
+        "contexto": "Relato após concluir um pacote de aulas."
+      },
+      {
+        "nome": "Aluno voltando a dirigir",
+        "texto": "Fiquei muitos anos sem dirigir e não sabia por onde recomeçar. A Jaque montou um plano bem tranquilo e respeitou meu ritmo o tempo todo.",
+        "contexto": "Aulas focadas em retomada de prática."
+      },
+      {
+        "nome": "Primeira habilitação",
+        "texto": "As explicações sobre o trânsito foram muito claras. Cheguei na prova mais segura porque já tinha treinado situações parecidas nas aulas.",
+        "contexto": "Preparação para a prova prática de categoria B."
+      }
+    ]
+  },
+  "cnh": {
+    "titulo": "Quero dirigir com a CNH Brasil",
+    "descricao": "A CNH Brasil é a parceira institucional da Instrutora Jaque para a parte burocrática e formal do processo de habilitação.",
+    "texto": "As aulas práticas com a Jaque são o seu momento de ganhar confiança e vivência real no trânsito. Já a CNH Brasil concentra a parte de documentação, prazos e processos formais. Assim, você tem um caminho organizado: acolhimento nas aulas e estrutura na autoescola.",
+    "ctaLabel": "Ir para a página da CNH Brasil",
+    "url": "https://www.gov.br/transportes/pt-br/cnh-do-brasil"
+  }
+}
+

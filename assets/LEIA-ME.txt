@@ -1,0 +1,17 @@
+PASTA DE ASSETS
+
+Coloque aqui os seguintes arquivos:
+
+1. logo-cnh-brasil.png
+   - Logo da CNH Brasil
+   - Formato: PNG
+   - Tamanho recomendado: 200x80px ou proporcional
+   - Fundo transparente preferencialmente
+
+2. instrutora-jaque.jpg
+   - Foto da Instrutora Jaque
+   - Formato: JPG ou PNG
+   - Tamanho recomendado: 800x800px ou proporcional
+   - Boa qualidade de imagem
+
+Os arquivos serão carregados automaticamente pelo site.
